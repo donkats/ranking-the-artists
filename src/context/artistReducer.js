@@ -41,7 +41,7 @@ const artistReducer = (state, action) => {
       return {
         ...state,
         artist: [
-          ...state,
+          ...state.artist.slice(0, indexStars),
           { ...currentStars[indexStars], artistStars: currentStars[indexStars].artistStars + 1 },
           ...state.artist.slice(indexStars + 1),
         ],
