@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { CREATE_ARTIST, UPDATE_ARTIST, INCREMENT_RATING, DECREMENT_RATING } from './context/types';
 import ArtistContext from './context/artistContext';
 import CreateArtist from './components/CreateArtist';
-import EditArtist from './components/UpdateArtist';
+import UpdateArtist from './components/UpdateArtist';
 import ArtistList from './components/ArtistList';
 import artistReducer from './context/artistReducer';
 import initialState from './context/initialState';
@@ -18,30 +18,28 @@ function App() {
         <Router>
 
           <Route
-            path="/home"
+            path="/list"
             render={() => (
               <ArtistList
-                onClickMinus={(decId) => dispatch({ type: DECREMENT_RATING, id: decId })}
-                onClickPlus={(incId) => dispatch({ type: INCREMENT_RATING, id: incId })}
+                onClickMinus={(selectedId) => dispatch({ type: DECREMENT_RATING, id: selectedId })}
+                onClickPlus={(selectedId) => dispatch({ type: INCREMENT_RATING, id: selectedId })}
               />
             )}
           />
           <Route
-            path="/home"
+            path="/list"
             render={() => (
               <CreateArtist
                 onSubmit={(name) => dispatch({ type: CREATE_ARTIST, artistName: name })}
               />
             )}
           />
-          <Redirect to="/home" />
+          <Redirect to="/list" />
           <Switch>
             <Route
-              exact
-              path="/artist/:id"
+              exact path="/artist/:id"
               render={(props) => (
-                <EditArtist
-                  {...props}
+                <UpdateArtist {...props}
                   onSubmit={(data) => dispatch({
                     type: UPDATE_ARTIST,
                     id: data.id,

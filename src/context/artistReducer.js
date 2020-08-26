@@ -20,7 +20,7 @@ const artistReducer = (state, action) => {
     artistPhoto: action.artistPhoto,
     artistStars: action.artistStars,
   };
-  const index = state.artist.findIndex((artist) => artist.id === action.id);
+  
   switch (type) {
     case CREATE_ARTIST:
       return {
@@ -28,15 +28,20 @@ const artistReducer = (state, action) => {
         artist: [...state.artist, createdArtist],
       };
     case UPDATE_ARTIST:
+      const updatedArtist = [
+        ...state.artist.slice(0, action.id),
+        editedArtist,
+        ...state.artist.slice(action.id + 1)
+    ]
       return {
         ...state,
-        artist: [...state.artist.slice(0, index), editedArtist, ...state.artist.slice(index + 1)],
+        artist: updatedArtist
       };
     case INCREMENT_RATING:
       return {
         ...state,
         artist: [
-          ...state.artist.slice(0, indexStars),
+          ...state,
           { ...currentStars[indexStars], artistStars: currentStars[indexStars].artistStars + 1 },
           ...state.artist.slice(indexStars + 1),
         ],
