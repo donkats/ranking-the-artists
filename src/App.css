@@ -1,38 +1,91 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color:#CBC9AD;  
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  margin-top: 0;
 }
 
-.App-link {
-  color: #61dafb;
+body, ul {
+  background-color:#CBC9AD;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-header{
+  margin-left: 20px;
+  color:#656839;
 }
+
+.input {
+  margin-left: 20px;
+  width: 20%;
+  border: 2px solid #656839;
+  color: #514B23;
+  background: whitesmoke;
+  font-size:16px;
+}
+
+
+::placeholder {
+  color: #514B23;
+}
+
+.button {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: center;
+  background-color: whitesmoke;
+  color: #514B23;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 0.2em;
+  font-size: 16px;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #514B23;
+  color: whitesmoke;
+}
+
+.button-rating {
+  background-color: transparent;
+  border: solid transparent;
+  outline: none;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.table {
+  margin-left: 20px;
+  margin-top: 20px;
+  overflow: auto;
+  border-collapse: collapse;
+}
+
+.table tr {
+  text-align: left;
+  height: 10px;
+  border: 2px solid #656839;
+  background-color: #BDDBD0;
+}
+
+.table th {
+  padding: 2%;
+  background-color: #31353521;
+  color: #656839;
+}
+
+.table td {
+  font-size: 30px;
+  color: #11998e;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #656839;
+}
+
+.table td a {
+  font-size: 25px;
+  color:blue;
+}
+
