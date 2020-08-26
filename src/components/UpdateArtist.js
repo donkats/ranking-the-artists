@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ArtistContext from '../context/artistContext';
 
-const EditArtist = (props) => {
+const UpdateArtist = (props) => {
   const artistContext = useContext(ArtistContext);
   const { artist } = artistContext.state;
 
@@ -68,7 +68,7 @@ const EditArtist = (props) => {
   );
 };
 
-EditArtist.propTypes = {
+UpdateArtist.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -77,4 +77,4 @@ EditArtist.propTypes = {
   }),
 };
 
-export default EditArtist;
+export default UpdateArtist;

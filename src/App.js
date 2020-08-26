@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { CREATE_ARTIST, UPDATE_ARTIST, INCREMENT_RATING, DECREMENT_RATING } from './context/types';
 import ArtistContext from './context/artistContext';
 import CreateArtist from './components/CreateArtist';
-import EditArtist from './components/EditArtist';
+import EditArtist from './components/UpdateArtist';
 import ArtistList from './components/ArtistList';
 import artistReducer from './context/artistReducer';
 import initialState from './context/initialState';
