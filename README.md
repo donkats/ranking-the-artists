@@ -1,6 +1,6 @@
 # Artist Ranker
 
-Project for </salt> studies
+Project for Salt study, where users can rank artists
 
 ## Tech stack
 
